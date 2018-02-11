@@ -1,0 +1,14 @@
+version: "3"
+services:
+    server:
+        build: .
+        volumes:
+            - ./:/usr/src
+        ports:
+            - "4000:4000"
+    db:
+        image: "postgres:latest"
+        volumes:
+            - ./data:/var/lib/postgresql/data
+        environment: 
+            POSTGRES_PASSWORD: testing
